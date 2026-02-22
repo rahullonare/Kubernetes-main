@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/rahullonare/Kubernetes-main
+    repoURL: https://github.com/rahullonare/Kubernetes-main.git
     targetRevision: HEAD
     path: day-14-argocd
   destination: 
