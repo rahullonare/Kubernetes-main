@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/rahullonare/Kubernetes-main.git
-    targetRevision: HEAD
+    targetRevision: main
     path: day-12-argocd/argomanifest
   destination: 
     server: https://kubernetes.default.svc
