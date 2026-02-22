@@ -1,25 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-hpa
-  namespace: default
+  name: myapp-deployment
+  labels:
+    app: webapp
+    type: front-end
 spec:
-  replicas: 1
+  replicas: 2  # You can change the number of replicas as needed
   selector:
     matchLabels:
-      app: nginx
+      app: webapp
   template:
     metadata:
       labels:
-        app: nginx
+        app: webapp
+        type: front-end
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.7.9
-        ports:
-        - containerPort: 80
-        resources:
-          # You must specify requests for CPU to autoscale
-          # based on CPU utilization
-          requests:
-            cpu: "250m"
+      - name: nginx-container
+        image: nginx
+      nodeSelector:
+        clr: pink
